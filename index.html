@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lung Disease Identification</title>
+    <script src="https://kit.fontawesome.com/8943e9eb68.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body class="body">
+    <div class="page-container">
+        <div class="content-container">
+            <div class="page-title">Lung Disease Identification</div>
+
+            <div class="page-desc">
+                Discover our cutting-edge medical image analysis tool designed for accurate predictions.
+                Effortlessly upload lung X-rays and receive precise diagnostic insights. Seamlessly choose
+                between browsing your device or simply dragging and dropping images for streamlined healthcare
+                decision-making. Revolutionize your diagnostic process with ease and efficiency.
+            </div>
+
+            <!-- File input for uploading -->
+            <form id="upload-form" action="/" method="post" enctype="multipart/form-data">
+                <label for="file-input" class="file-upload-label">
+                    <div class="browse-text"><i class="fas fa-search"></i> Browse an image</div>
+                    <input class="file-upload-box" type="file" id="file-input" name="file" accept="image/*">
+                </label>
+            </form>
+
+            <!-- Drag and drop section -->
+            <div id="drop-zone">
+                <div class="drag-drop-text"><i class="fas fa-cloud-upload-alt"></i> Drag & Drop an image</div>
+            </div>
+
+            <!-- Predict button -->
+            <button id="predict-button">Predict</button>
+
+            <!-- Predicted label -->
+            <div id="predicted-label" style="display: none;"></div>
+
+            <!-- Image display section -->
+            <div id="image-container" style="display: none;">
+                <img id="uploaded-image" src="#" alt="Uploaded Image" style="max-width: 100%;">
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
